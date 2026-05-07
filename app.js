@@ -1,128 +1,12 @@
 /* =========================================================
    Charlotte Esteve — Portfolio
-   Global app: data loader, embed helpers, tweaks panel
+   Global app: data loader, embed helpers
    ========================================================= */
 
-const STORAGE_KEY = "ce-portfolio-prefs";
-const DEFAULT_PREFS = { palette: "ink", font: "modern" };
+/* ---------- Fixed appearance ---------- */
 
-const PALETTES = [
-  { id: "press", label: "Rouge presse", swatches: ["#f6f1e8", "#16110c", "#c2410c"] },
-  { id: "ink",   label: "Bleu encre",   swatches: ["#f4f3ef", "#0e1422", "#3d4f8c"] },
-  { id: "mono",  label: "Monochrome",   swatches: ["#ffffff", "#0a0a0a", "#6b6b6b"] }
-];
-
-const FONTS = [
-  { id: "modern",        label: "Moderne",      preview: "Aa", sub: "Fraunces · Inter" },
-  { id: "classic",       label: "Classique",    preview: "Aa", sub: "Playfair · Source" },
-  { id: "institutional", label: "Institutionnel", preview: "Aa", sub: "Garamond · Plex" }
-];
-
-/* ---------- Preferences (palette / font) ---------- */
-
-function loadPrefs() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { ...DEFAULT_PREFS };
-    return { ...DEFAULT_PREFS, ...JSON.parse(raw) };
-  } catch { return { ...DEFAULT_PREFS }; }
-}
-
-function savePrefs(prefs) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs)); } catch {}
-}
-
-function applyPrefs(prefs) {
-  document.documentElement.setAttribute("data-palette", prefs.palette);
-  document.documentElement.setAttribute("data-font", prefs.font);
-}
-
-/* Apply preferences as early as possible */
-const prefs = loadPrefs();
-applyPrefs(prefs);
-
-/* ---------- Tweaks panel ---------- */
-
-function buildTweaksPanel() {
-  const fab = document.createElement("button");
-  fab.className = "tweaks-fab";
-  fab.type = "button";
-  fab.innerHTML = `<span>Apparence</span>`;
-  fab.setAttribute("aria-label", "Ouvrir les options d'apparence");
-
-  const panel = document.createElement("div");
-  panel.className = "tweaks-panel";
-  panel.innerHTML = `
-    <h3 class="tweaks-title">Apparence</h3>
-    <p class="tweaks-sub">Personnalisez les couleurs et la typographie.</p>
-    <div class="tweak-group">
-      <span class="tweak-label">Palette</span>
-      <div class="tweak-options" data-group="palette">
-        ${PALETTES.map(p => `
-          <button class="tweak-option" type="button" data-value="${p.id}" title="${p.label}">
-            <span class="tweak-swatch-row">
-              ${p.swatches.map(s => `<span class="tweak-swatch" style="background:${s}"></span>`).join("")}
-            </span>
-            <span>${p.label}</span>
-          </button>
-        `).join("")}
-      </div>
-    </div>
-    <div class="tweak-group">
-      <span class="tweak-label">Typographie</span>
-      <div class="tweak-options" data-group="font">
-        ${FONTS.map(f => `
-          <button class="tweak-option" type="button" data-value="${f.id}" title="${f.sub}">
-            <span class="tweak-font-preview" style="font-family: ${fontFamilyFor(f.id)}">${f.preview}</span>
-            <span>${f.label}</span>
-          </button>
-        `).join("")}
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(fab);
-  document.body.appendChild(panel);
-
-  function fontFamilyFor(id) {
-    if (id === "modern") return "'Fraunces', serif";
-    if (id === "classic") return "'Playfair Display', serif";
-    return "'EB Garamond', serif";
-  }
-
-  function syncActive() {
-    panel.querySelectorAll(".tweak-options").forEach(group => {
-      const key = group.dataset.group;
-      group.querySelectorAll(".tweak-option").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.value === prefs[key]);
-      });
-    });
-  }
-
-  fab.addEventListener("click", () => {
-    panel.classList.toggle("open");
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!panel.classList.contains("open")) return;
-    if (panel.contains(e.target) || fab.contains(e.target)) return;
-    panel.classList.remove("open");
-  });
-
-  panel.querySelectorAll(".tweak-options").forEach(group => {
-    const key = group.dataset.group;
-    group.addEventListener("click", (e) => {
-      const btn = e.target.closest(".tweak-option");
-      if (!btn) return;
-      prefs[key] = btn.dataset.value;
-      applyPrefs(prefs);
-      savePrefs(prefs);
-      syncActive();
-    });
-  });
-
-  syncActive();
-}
+document.documentElement.setAttribute("data-palette", "ink");
+document.documentElement.setAttribute("data-font", "classic");
 
 /* ---------- Mobile nav ---------- */
 
@@ -403,7 +287,6 @@ async function renderContact() {
 
 document.addEventListener("DOMContentLoaded", () => {
   setupNav();
-  buildTweaksPanel();
 
   const page = document.body.dataset.page;
   if (page === "home") {
