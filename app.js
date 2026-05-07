@@ -72,15 +72,12 @@ function renderCard(item, kind, index) {
   const meta = document.createElement("div");
   meta.className = "card-meta";
   meta.innerHTML = `
-    <span class="num">N°${num}</span>
     <span>${fmtDateShort(item.date)}</span>
-    ${item.duration ? `<span>${item.duration}</span>` : ""}
-    ${item.outlet ? `<span>${item.outlet}</span>` : ""}
   `;
 
   const body = document.createElement("div");
   body.className = "card-body";
-  const kindLabel = kind === "article" ? "Article · PDF" : kind === "audio" ? "Reportage audio" : "Reportage vidéo";
+  const kindLabel = kind === "article" ? "Article" : kind === "audio" ? "Reportage audio" : "Reportage vidéo";
   body.innerHTML = `
     <p class="card-kind">${kindLabel}</p>
     <h3 class="card-title">${item.title}</h3>
