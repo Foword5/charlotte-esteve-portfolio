@@ -1,10 +1,10 @@
 /* =========================================================
    Charlotte Esteve — Portfolio
-  Variables: palette ink + typographie classic
+   Variables: 3 palettes + 3 typographies
    ========================================================= */
 
-/* Palette — Bleu encre */
-:root {
+/* Palette 1 — Rouge presse (la plus "fun") */
+:root[data-palette="press"] {
   --bg: #f6f1e8;
   --bg-elevated: #fbf7f0;
   --fg: #16110c;
@@ -13,16 +13,60 @@
   --accent: oklch(0.55 0.18 25);
   --accent-fg: #fbf7f0;
   --accent-soft: oklch(0.94 0.04 25);
+}
+
+/* Palette 2 — Bleu encre */
+:root[data-palette="ink"] {
+  --bg: #f4f3ef;
+  --bg-elevated: #fbfaf6;
+  --fg: #0e1422;
+  --fg-muted: #57607a;
+  --rule: #d9d8d0;
+  --accent: oklch(0.40 0.10 250);
+  --accent-fg: #fbfaf6;
+  --accent-soft: oklch(0.94 0.025 250);
+}
+
+/* Palette 3 — Monochrome (la plus sobre) */
+:root[data-palette="mono"] {
+  --bg: #ffffff;
+  --bg-elevated: #fafafa;
+  --fg: #0a0a0a;
+  --fg-muted: #6b6b6b;
+  --rule: #e6e6e6;
+  --accent: #0a0a0a;
+  --accent-fg: #ffffff;
+  --accent-soft: #f0f0f0;
+}
+
+/* Default = Bleu encre */
+:root {
   color-scheme: light;
 }
 
-/* Typographie — Classique */
-:root {
+/* Typographies */
+:root[data-font="modern"] {
+  --font-serif: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --serif-weight-display: 500;
+  --serif-tracking-display: -0.02em;
+}
+
+:root[data-font="classic"] {
   --font-serif: "Playfair Display", "Times New Roman", serif;
   --font-sans: "Source Sans 3", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --serif-weight-display: 600;
   --serif-tracking-display: -0.01em;
+}
+
+:root[data-font="institutional"] {
+  --font-serif: "EB Garamond", "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --serif-weight-display: 500;
+  --serif-tracking-display: 0;
 }
 
 /* Reset */
@@ -617,6 +661,107 @@ button { font: inherit; cursor: pointer; }
 }
 .footer-inner a:hover { color: var(--fg); }
 
+/* ====== Tweaks panel ====== */
+.tweaks-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  background: var(--fg);
+  color: var(--bg);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.tweaks-fab:hover { background: var(--accent); color: var(--accent-fg); }
+
+.tweaks-panel {
+  position: fixed;
+  bottom: 76px;
+  right: 20px;
+  z-index: 99;
+  width: 320px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  padding: 22px;
+  display: none;
+}
+.tweaks-panel.open { display: block; }
+.tweaks-title {
+  font-family: var(--font-serif);
+  font-weight: var(--serif-weight-display);
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+.tweaks-sub {
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin: 0 0 22px;
+}
+.tweak-group {
+  margin-bottom: 20px;
+}
+.tweak-group:last-child { margin-bottom: 0; }
+.tweak-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0 0 10px;
+  display: block;
+}
+.tweak-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.tweak-option {
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  color: var(--fg);
+  border-radius: 4px;
+  padding: 10px 8px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.tweak-option:hover { border-color: var(--fg); }
+.tweak-option.active {
+  border-color: var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+}
+.tweak-swatch-row {
+  display: flex;
+  gap: 3px;
+}
+.tweak-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.tweak-font-preview {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 500;
+}
+
 /* ====== Loading state ====== */
 .loading {
   padding: 80px 0;
@@ -629,6 +774,6 @@ button { font: inherit; cursor: pointer; }
 
 /* Print */
 @media print {
-  .site-header, .site-footer, .card-action, .embed-card { display: none; }
+  .site-header, .site-footer, .tweaks-fab, .tweaks-panel, .card-action, .embed-card { display: none; }
   .card { padding: 12px 0; break-inside: avoid; }
 }
