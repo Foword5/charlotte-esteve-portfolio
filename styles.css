@@ -370,7 +370,6 @@ button { font: inherit; cursor: pointer; }
 }
 .featured-item:last-child { border-right: none; }
 .featured-item:hover { background: var(--accent-soft); }
-.featured-item:first-child { padding-left: 0; }
 .featured-kind {
   font-size: 11px;
   letter-spacing: 0.16em;
