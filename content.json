@@ -1,0 +1,134 @@
+{
+  "site": {
+    "name": "Charlotte Esteve",
+    "tagline": "Journaliste en étude à l'IFSJ — Lille",
+    "intro": "Étudiante journaliste à l'École supérieure de journalisme de Lille. Je couvre la société, la culture et le politique à travers l'écrit, le son et l'image. Ce portfolio rassemble une sélection de mes travaux.",
+    "email": "charlotte.esteve@example.com",
+    "social": [
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/" },
+      { "label": "X / Twitter", "url": "https://twitter.com/" },
+      { "label": "Instagram", "url": "https://instagram.com/" }
+    ]
+  },
+  "articles": [
+    {
+      "title": "À Lille, les maraudes étudiantes face à l'hiver",
+      "description": "Reportage de terrain auprès des bénévoles qui sillonnent la métropole les nuits les plus froides.",
+      "date": "2026-02-14",
+      "outlet": "L'IFSJ Mag",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_PDF_1/view"
+    },
+    {
+      "title": "Habiter sans toit : trois récits du Nord",
+      "description": "Enquête sur le mal-logement dans les Hauts-de-France à travers le quotidien de trois familles.",
+      "date": "2026-01-08",
+      "outlet": "Le Bondy Blog",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_PDF_2/view"
+    },
+    {
+      "title": "Quand la friche devient théâtre",
+      "description": "Portrait d'une compagnie qui transforme les anciennes usines roubaisiennes en scènes ouvertes.",
+      "date": "2025-11-22",
+      "outlet": "La Voix du Nord",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_PDF_3/view"
+    },
+    {
+      "title": "Étudiants précaires : la file d'attente comme quotidien",
+      "description": "Une matinée à la distribution alimentaire de la fac de Lille 3, racontée à hauteur d'étudiants.",
+      "date": "2025-10-03",
+      "outlet": "L'Étudiant",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_PDF_4/view"
+    }
+  ],
+  "audio": [
+    {
+      "title": "Voix de la Grand-Place",
+      "description": "Carnet sonore d'une journée de marché à Lille, entre habitués, vendeurs et passants.",
+      "date": "2026-03-01",
+      "duration": "08:42",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_AUDIO_1/view"
+    },
+    {
+      "title": "La nuit, les urgences psychiatriques",
+      "description": "Reportage immersif au CHU de Lille auprès des soignants de garde.",
+      "date": "2026-01-19",
+      "duration": "12:05",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_AUDIO_2/view"
+    },
+    {
+      "title": "Voisins de palier",
+      "description": "Trois portraits sonores tirés d'une résidence étudiante du Vieux-Lille.",
+      "date": "2025-12-04",
+      "duration": "06:30",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_AUDIO_3/view"
+    }
+  ],
+  "video": [
+    {
+      "title": "Roubaix, ville-laboratoire du zéro déchet",
+      "description": "Mini-reportage vidéo sur les familles engagées dans la démarche zéro déchet portée par la municipalité.",
+      "date": "2026-02-28",
+      "duration": "04:12",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_VIDEO_1/view"
+    },
+    {
+      "title": "Une promo, une rédaction",
+      "description": "Plongée dans la conférence de rédaction hebdomadaire d'une promotion de l'IFSJ.",
+      "date": "2025-12-15",
+      "duration": "05:48",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_VIDEO_2/view"
+    },
+    {
+      "title": "Sur la ligne 2",
+      "description": "Portrait filmé d'un conducteur de métro lillois en fin de carrière.",
+      "date": "2025-10-29",
+      "duration": "03:55",
+      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_VIDEO_3/view"
+    }
+  ],
+  "cv": {
+    "summary": "Étudiante en deuxième année à l'École supérieure de journalisme de Lille (IFSJ). Intéressée par les formats longs, le reportage de terrain et le journalisme sonore.",
+    "experience": [
+      {
+        "role": "Stagiaire — service Société",
+        "org": "La Voix du Nord",
+        "period": "Été 2025",
+        "details": "Reportages de terrain, brèves quotidiennes et un format long sur les friches culturelles."
+      },
+      {
+        "role": "Pigiste",
+        "org": "Le Bondy Blog",
+        "period": "2024 — en cours",
+        "details": "Enquêtes et portraits autour des questions de logement et de précarité étudiante."
+      },
+      {
+        "role": "Rédactrice bénévole",
+        "org": "Radio Campus Lille",
+        "period": "2023 — 2024",
+        "details": "Production de chroniques culturelles et co-animation d'une matinale hebdomadaire."
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master de journalisme",
+        "school": "IFSJ — École supérieure de journalisme de Lille",
+        "period": "2024 — 2026"
+      },
+      {
+        "degree": "Licence d'information-communication",
+        "school": "Université de Lille",
+        "period": "2021 — 2024"
+      }
+    ],
+    "skills": [
+      "Reportage de terrain",
+      "Écriture longue",
+      "Montage audio (Reaper, Audition)",
+      "Montage vidéo (Premiere)",
+      "Photographie",
+      "Anglais courant",
+      "Espagnol intermédiaire"
+    ],
+    "pdfUrl": "https://drive.google.com/file/d/EXEMPLE_ID_CV/view"
+  }
+}
