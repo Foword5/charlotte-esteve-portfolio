@@ -3,11 +3,6 @@
    Global app: data loader, embed helpers
    ========================================================= */
 
-/* ---------- Fixed appearance ---------- */
-
-document.documentElement.setAttribute("data-palette", "ink");
-document.documentElement.setAttribute("data-font", "classic");
-
 /* ---------- Mobile nav ---------- */
 
 function setupNav() {
