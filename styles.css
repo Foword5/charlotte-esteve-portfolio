@@ -51,7 +51,7 @@ button { font: inherit; cursor: pointer; }
 
 .container {
   width: 100%;
-  max-width: 1180px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 0 32px;
 }
