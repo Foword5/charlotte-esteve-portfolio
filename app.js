@@ -102,12 +102,13 @@ function renderCard(item, kind, index) {
   embed.className = "embed-card";
   const frameClass = kind === "video" ? "video" : kind === "audio" ? "audio" : "pdf";
   const src = mediaSrc(item);
+  const isLocal = Boolean(item.file && item.file != "");
 
   let playerHTML = "";
   if (available) {
-    if (kind === "video" && !src.endsWith(".mp3")) {
+    if (kind === "video" && !src.endsWith(".mp3") && isLocal) {
       playerHTML = `<video class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></video>`;
-    } else if (kind === "audio" || src.endsWith(".mp3")) {
+    } else if ((kind === "audio" || src.endsWith(".mp3")) && isLocal) {
       playerHTML = `<audio class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></audio>`;
     } else {
       playerHTML = `<iframe class="embed-frame ${frameClass}" src="" title="${item.title}"></iframe>`;
