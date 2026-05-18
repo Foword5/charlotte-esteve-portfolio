@@ -1,134 +1,243 @@
 {
   "site": {
     "name": "Charlotte Esteve",
-    "tagline": "Journaliste en étude à l'IFSJ — Lille",
-    "intro": "Étudiante journaliste à l'École supérieure de journalisme de Lille. Je couvre la société, la culture et le politique à travers l'écrit, le son et l'image. Ce portfolio rassemble une sélection de mes travaux.",
-    "email": "charlotte.esteve@example.com",
-    "social": [
-      { "label": "LinkedIn", "url": "https://www.linkedin.com/" },
-      { "label": "X / Twitter", "url": "https://twitter.com/" },
-      { "label": "Instagram", "url": "https://instagram.com/" }
-    ]
+    "tagline": "Journaliste — 2ème année de Master en alternance, ISFJ Lille",
+    "intro": "Étudiante en journalisme à l'ISFJ de Lille, je cherche une alternance pour septembre. J'ai exploré la presse écrite, la radio, la télévision et le digital, avec toujours la même envie : raconter des histoires vraies et aller sur le terrain. Curieuse, dynamique et touche-à-tout, j'aime rencontrer des gens et comprendre leurs parcours."
   },
   "articles": [
     {
-      "title": "À Lille, les maraudes étudiantes face à l'hiver",
-      "description": "Reportage de terrain auprès des bénévoles qui sillonnent la métropole les nuits les plus froides.",
-      "date": "2026-02-14",
-      "outlet": "L'IFSJ Mag",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_PDF_1/view"
+      "title": "Quand les signes précoces ne suffisent pas : comprendre l'angle mort médical de la SEP",
+      "description": "Enquête consacrée à la sclérose en plaques, maladie neurologique qui touche environ 110 000 personnes en France. L'article analyse les difficultés du diagnostic précoce et les conséquences de l'errance diagnostique sur la vie des patients.",
+      "date": "2026-04-01",
+      "driveUrl": "https://drive.google.com/file/d/1WCV1Vp0s43x_D76q_sxc47EvJ0RjTVWk/preview"
     },
     {
-      "title": "Habiter sans toit : trois récits du Nord",
-      "description": "Enquête sur le mal-logement dans les Hauts-de-France à travers le quotidien de trois familles.",
-      "date": "2026-01-08",
-      "outlet": "Le Bondy Blog",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_PDF_2/view"
+      "title": "Quand les toits se transforment en jardins",
+      "description": "Article publié dans le magazine ADN (Accent du Nord), dans le dossier « Le renouveau des Hauts-de-France ». Le sujet explore le développement des toitures végétalisées dans la métropole lilloise comme réponse aux enjeux écologiques et au manque d'espaces verts urbains.",
+      "date": "2025-04-01",
+      "driveUrl": "https://drive.google.com/file/d/1eUjf6x2_psxEHCfzEHZYeDWHUNWxUbg4/preview"
     },
     {
-      "title": "Quand la friche devient théâtre",
-      "description": "Portrait d'une compagnie qui transforme les anciennes usines roubaisiennes en scènes ouvertes.",
-      "date": "2025-11-22",
-      "outlet": "La Voix du Nord",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_PDF_3/view"
+      "title": "Lille Art Up! 2025 : quand la matière se libère et révèle les talents",
+      "description": "Reportage culturel réalisé autour du salon d'art contemporain Lille Art Up! 2025 : œuvres exposées, artistes émergents et nouvelles formes d'expression artistique mises en avant durant l'événement.",
+      "date": "2025-03-01",
+      "driveUrl": "https://drive.google.com/file/d/1N2P1oj339NEFdNfkVNoAwL0BAadKkltP/preview"
     },
     {
-      "title": "Étudiants précaires : la file d'attente comme quotidien",
-      "description": "Une matinée à la distribution alimentaire de la fac de Lille 3, racontée à hauteur d'étudiants.",
-      "date": "2025-10-03",
-      "outlet": "L'Étudiant",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_PDF_4/view"
+      "title": "Santé mentale : cinq ans après le confinement, des séquelles encore présentes",
+      "description": "Article de société sur les conséquences psychologiques de la pandémie de Covid-19. À Lille, le sujet s'intéresse aux troubles anxieux, à l'isolement persistant et aux difficultés relationnelles encore ressenties cinq ans après la crise sanitaire.",
+      "date": "2025-03-01",
+      "driveUrl": "https://drive.google.com/file/d/13fpIUf6qS_5JZZAajSaS_7QqD9CvIK35/preview"
+    },
+    {
+      "title": "Dark Kitchen : quel impact sur notre alimentation ?",
+      "description": "Article d'analyse décryptant le fonctionnement des dark kitchens et leurs conséquences sur les habitudes alimentaires des consommateurs, complété par l'interview d'une diététicienne sur les enjeux de santé.",
+      "date": "2024-02-01",
+      "driveUrl": "https://drive.google.com/file/d/1oifGKwF3KMV12tXYNTo43zNeULU6IhSt/preview"
+    },
+    {
+      "title": "Les ordonnances de 1944 : reconstruire la France d'après-guerre",
+      "description": "Projet de PAO et de rédaction réalisé en groupe autour des ordonnances de 1944, mêlant recherche historique, rédaction journalistique et conception éditoriale.",
+      "date": "2024-04-01",
+      "driveUrl": ""
+    },
+    {
+      "title": "Décryptage : aurores boréales, comment expliquer ce phénomène ?",
+      "description": "Article de vulgarisation scientifique réalisé dans le cadre du cours de presse digitale et référencement, revenant sur le phénomène des aurores boréales et les explications scientifiques qui l'entourent.",
+      "date": "2023-11-01",
+      "driveUrl": "https://drive.google.com/file/d/1Wid2_4kkiOXiEcPFLuKcU-Qb09Ow2XcA/preview"
+    },
+    {
+      "title": "L'impact des écrans sur les enfants",
+      "description": "Magazine ADN conçu en groupe de quatre étudiantes dans le cadre du cours de presse magazine. J'y ai rédigé un article sur les conséquences de la surexposition aux écrans chez les enfants ainsi qu'une interview d'un médecin sur les enjeux de santé liés au numérique.",
+      "date": "2023-10-01",
+      "driveUrl": "https://drive.google.com/file/d/1xbaQ0KwGeuEp19vmxnpZI3btF4M3OFXZ/preview"
+    },
+    {
+      "title": "Le Nord en guise d'Eldorado",
+      "description": "Portrait d'une étudiante taïwanaise venue poursuivre ses études à Lille, réalisé pour le premier magazine de classe ADN (Accent du Nord), dans une série d'articles consacrés à l'actualité de la métropole lilloise.",
+      "date": "2023-02-01",
+      "driveUrl": "https://drive.google.com/file/d/1ruVo0tcvQprMLcDjXOt6QHmVnCCynNwQ/preview"
     }
   ],
   "audio": [
     {
-      "title": "Voix de la Grand-Place",
-      "description": "Carnet sonore d'une journée de marché à Lille, entre habitués, vendeurs et passants.",
+      "title": "Interview du maire d'Hellemmes pendant l'entre-deux-tours des municipales",
+      "description": "Interview politique réalisée dans le cadre des élections municipales 2026. L'échange aborde les enjeux locaux de l'entre-deux-tours et les attentes des habitants du territoire.",
       "date": "2026-03-01",
-      "duration": "08:42",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_AUDIO_1/view"
+      "driveUrl": "https://drive.google.com/file/d/1yx35h1ubwawXgVD1_PgDEAen9iKqaNMH/preview"
     },
     {
-      "title": "La nuit, les urgences psychiatriques",
-      "description": "Reportage immersif au CHU de Lille auprès des soignants de garde.",
-      "date": "2026-01-19",
-      "duration": "12:05",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_AUDIO_2/view"
+      "title": "Émission complète — animatrice et coordinatrice d'antenne",
+      "description": "Animation d'une émission radio complète sur ISFJ Radio : gestion du conducteur, coordination de l'équipe, choix musicaux et préparation éditoriale, en direct.",
+      "date": "2025-11-24",
+      "driveUrl": "https://drive.google.com/file/d/1RDYxLKE3NlBHWT_FJ8IW_Ti0aQs-D7Sx/preview"
     },
     {
-      "title": "Voisins de palier",
-      "description": "Trois portraits sonores tirés d'une résidence étudiante du Vieux-Lille.",
-      "date": "2025-12-04",
-      "duration": "06:30",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_AUDIO_3/view"
+      "title": "Émission complète — animatrice et coordinatrice d'antenne",
+      "description": "Animation et coordination d'une émission radio en direct : préparation du conducteur, gestion des chroniques, choix des musiques et organisation de l'équipe éditoriale et technique.",
+      "date": "2025-04-07",
+      "driveUrl": "https://drive.google.com/file/d/1ck12A9HLv09RJ-P1cttjamv6YYZfeIbn/preview"
+    },
+    {
+      "title": "Chronique sur la réforme des retraites",
+      "description": "Chronique radio d'actualité consacrée aux enjeux sociaux et politiques liés à la réforme des retraites en France.",
+      "date": "2025-03-01",
+      "driveUrl": "https://drive.google.com/file/d/1dBMfr10EUeCmT6G29L_ybs2w3v2Rbwq0/preview"
+    },
+    {
+      "title": "Papier sec — conflit en Syrie",
+      "description": "Sujet radio d'actualité internationale revenant sur les tensions géopolitiques et les conséquences humanitaires du conflit syrien.",
+      "date": "2025-03-01",
+      "driveUrl": "https://drive.google.com/file/d/1ZeNThZ-B2hEz5nky_spgyRFDwlpHsKBz/preview"
+    },
+    {
+      "title": "Chronique des lois insolites",
+      "description": "Chronique diffusée sur ISFJ Radio autour de lois étonnantes et insolites à travers le monde, traitées sous un angle informatif et divertissant.",
+      "date": "2025-01-01",
+      "driveUrl": "https://drive.google.com/file/d/1cXtirKWPBiYxuxcHLgD1l5KNsniRWi9p/preview"
+    },
+    {
+      "title": "Papier sec — inflation",
+      "description": "Sujet radio consacré à l'inflation et à ses conséquences économiques sur le quotidien des Français.",
+      "date": "2025-01-01",
+      "driveUrl": "https://drive.google.com/file/d/13YYoNxSHYNmHukcKE6X-z3qDOr50pMhu/preview"
+    },
+    {
+      "title": "Flash info radio",
+      "description": "Exercice de flash d'information réalisé dans le cadre d'un partiel radio : écriture, hiérarchisation de l'information et présentation.",
+      "date": "2024-06-01",
+      "driveUrl": "https://drive.google.com/file/d/1LvbXXSk1P1UlPd0QCL2ROteYhgJ-Y1cS/preview"
+    },
+    {
+      "title": "Championnat du monde de la fricadelle",
+      "description": "Sujet radio réalisé lors d'un séminaire autour du championnat du monde de la fricadelle. Reportage de terrain mêlant ambiance, interviews et traitement journalistique de l'événement.",
+      "date": "2024-06-01",
+      "driveUrl": "https://drive.google.com/file/d/1PbhO-6R-8uNzhNR2-vKwZ-v_NFc2kcrX/preview"
     }
   ],
   "video": [
     {
-      "title": "Roubaix, ville-laboratoire du zéro déchet",
-      "description": "Mini-reportage vidéo sur les familles engagées dans la démarche zéro déchet portée par la municipalité.",
-      "date": "2026-02-28",
-      "duration": "04:12",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_VIDEO_1/view"
+      "title": "Vidéo réseaux sociaux — atelier de construction à La Condition Publique",
+      "description": "Format vidéo court destiné aux réseaux sociaux (18-35 ans) autour d'un atelier organisé à La Condition Publique de Roubaix : captation, montage et adaptation au format digital.",
+      "date": "2026-04-01",
+      "driveUrl": "https://drive.google.com/file/d/1JcC6Jd12M1ZZ4FhhamqDQfRdjYIcspZ5/preview"
     },
     {
-      "title": "Une promo, une rédaction",
-      "description": "Plongée dans la conférence de rédaction hebdomadaire d'une promotion de l'IFSJ.",
-      "date": "2025-12-15",
-      "duration": "05:48",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_VIDEO_2/view"
+      "title": "Vidéo réseaux sociaux — le phénomène du marathon",
+      "description": "Vidéo courte réalisée pour les réseaux sociaux sur l'engouement autour des marathons et de la course à pied, mêlant interviews, images d'illustration et montage dynamique.",
+      "date": "2026-02-01",
+      "driveUrl": "https://drive.google.com/file/d/1Gwka8mS_Xnm6-V0e4oxhlbG3lP7teJjT/preview"
     },
     {
-      "title": "Sur la ligne 2",
-      "description": "Portrait filmé d'un conducteur de métro lillois en fin de carrière.",
-      "date": "2025-10-29",
-      "duration": "03:55",
-      "driveUrl": "https://drive.google.com/file/d/EXEMPLE_ID_VIDEO_3/view"
+      "title": "Exercice flash info télévisé",
+      "description": "Exercice de présentation d'un flash d'information télévisé : travail sur l'écriture, la diction et la gestion du direct.",
+      "date": "2025-10-01",
+      "driveUrl": "https://drive.google.com/file/d/1xuBEj9ERW9hEF5WVlLyqniPmz8vVavNj/preview"
+    },
+    {
+      "title": "Les drag queens dans les Hauts-de-France",
+      "description": "Documentaire/reportage de fin d'année consacré à l'univers du drag en France, avec un focus sur la scène des Hauts-de-France : coulisses du métier, parcours artistiques et enjeux de représentation.",
+      "date": "2025-08-01",
+      "driveUrl": "https://drive.google.com/file/d/1aXW1O_6NOVE2-NelusrSNhjv16XRfiSe/preview"
+    },
+    {
+      "title": "Sujet partiel — les médecines douces",
+      "description": "Reportage télévisé réalisé dans le cadre d'un partiel sur les pratiques de médecines alternatives et leur popularité croissante.",
+      "date": "2025-02-01",
+      "driveUrl": "https://drive.google.com/file/d/1NBE3q8WYqMBSPz6GYu6FQPc2SfZ222VV/preview"
+    },
+    {
+      "title": "Chronique télé en studio — Parcoursup",
+      "description": "Chronique réalisée en plateau autour de la plateforme Parcoursup et des enjeux liés à l'orientation des étudiants.",
+      "date": "2024-12-01",
+      "driveUrl": "https://drive.google.com/file/d/1wSqx6TTYZbcQgiNAh3LTo0xWJoOmXN_n/preview"
+    },
+    {
+      "title": "Desk — manifestations contre la réforme des retraites",
+      "description": "Sujet desk consacré aux mobilisations contre la réforme des retraites : participation au montage et à l'enregistrement de la voix off sur des images d'actualité.",
+      "date": "2024-11-01",
+      "driveUrl": "https://drive.google.com/file/d/11BA-Ng_fCRwe4yNtcyqgjv9GlU_0MBXg/preview"
+    },
+    {
+      "title": "Portrait d'un chef pilote",
+      "description": "Projet audiovisuel réalisé en collaboration avec l'école ECITV : travail en équipe autour du portrait d'un chef pilote, avec tournage et montage du sujet.",
+      "date": "2024-02-01",
+      "driveUrl": "https://drive.google.com/file/d/1VLxOqxza2oNfWa8ZxvbdPQ8KAFsmnQCH/preview"
+    },
+    {
+      "title": "Sujet neige à Lille",
+      "description": "Reportage télévisé réalisé en binôme dans le cadre d'un cours de Mojo. Sujet « marronnier » consacré aux épisodes neigeux à Lille, en tant que JRI (Journaliste Reporter d'Images).",
+      "date": "2024-01-01",
+      "driveUrl": "https://drive.google.com/file/d/1z38IeZEmzK9fHDzlBbQYIG36W9OCj7Mf/preview"
     }
   ],
   "cv": {
-    "summary": "Étudiante en deuxième année à l'École supérieure de journalisme de Lille (IFSJ). Intéressée par les formats longs, le reportage de terrain et le journalisme sonore.",
+    "summary": "Je suis étudiante en cinquième année de journalisme et je cherche une alternance pour septembre. J'ai exploré la presse écrite, la radio, la télévision et le digital, avec toujours la même envie : raconter des histoires vraies et aller sur le terrain. <br /><br />Avant ça, j'étais en sport-études natation, donc autant dire que le collectif, l'énergie et la rigueur font un peu partie du package. Aujourd'hui encore, j'adore travailler en équipe, construire des projets à plusieurs et donner de la vie aux idées. <br /><br />Je suis très curieuse, dynamique, un peu touche-à-tout, avec un vrai goût pour la culture et la musique (guitare pendant deux ans, niveau « petits accords mais grande motivation »). Et surtout, j'aime rencontrer des gens et comprendre leurs parcours, c'est clairement ce qui m'a menée vers ce métier. <br /><br />Je suis à la recherche d'une alternance où je pourrai continuer à apprendre, progresser et m'impliquer à fond.<br /><br /> Je vous laisse découvrir mes projets, en espérant qu’ils donnent autant envie à découvrir que j’en ai eu à les réaliser.",
     "experience": [
       {
-        "role": "Stagiaire — service Société",
-        "org": "La Voix du Nord",
-        "period": "Été 2025",
-        "details": "Reportages de terrain, brèves quotidiennes et un format long sur les friches culturelles."
+        "role": "Rédactrice Web & SEO (alternance)",
+        "org": "RESALIB",
+        "period": "Depuis sept. 2024",
+        "details": "Pilotage éditorial complet du blog d'un média dédié au bien-être (sophrologie, réflexologie, hypnose) : rédaction d'articles de fond et de portraits de praticiens, réalisation de vidéos de A à Z (tournage JRI/MOJO, interviews, montage) et optimisation SEO sémantique et technique."
       },
       {
-        "role": "Pigiste",
-        "org": "Le Bondy Blog",
-        "period": "2024 — en cours",
-        "details": "Enquêtes et portraits autour des questions de logement et de précarité étudiante."
-      },
-      {
-        "role": "Rédactrice bénévole",
-        "org": "Radio Campus Lille",
+        "role": "Rédactrice Web (alternance)",
+        "org": "KBANE",
         "period": "2023 — 2024",
-        "details": "Production de chroniques culturelles et co-animation d'une matinale hebdomadaire."
+        "details": "Journalisme de solutions autour de la rénovation énergétique : articles pédagogiques, reportages de terrain immersifs (suivi de chantiers, interviews d'experts), production et montage de vidéos courtes, et stratégie SEO."
+      },
+      {
+        "role": "Stagiaire journaliste",
+        "org": "Boum Média",
+        "period": "Avril — mai 2023",
+        "details": "Reportages vidéo et podcasts face caméra, montage audio/vidéo et rédaction d'articles d'actualité pour le web."
+      },
+      {
+        "role": "Chargée de communication",
+        "org": "Donuts&Donuts",
+        "period": "Juin — juillet 2023",
+        "details": "Gestion des réseaux sociaux (TikTok, Instagram) et création de contenu (shootings photo, concours, vidéos promotionnelles, interviews), marketing d'influence, partenariats et veille concurrentielle."
+      },
+      {
+        "role": "Sapeur-pompier nageuse sauveteuse",
+        "org": "SDIS Narbonne",
+        "period": "Été 2022",
+        "details": "Sécurité des vacanciers et secours aux victimes (PSE1 et BNSSA)."
       }
     ],
     "education": [
       {
         "degree": "Master de journalisme",
-        "school": "IFSJ — École supérieure de journalisme de Lille",
-        "period": "2024 — 2026"
+        "school": "ISFJ — Lille",
+        "period": "2025 — 2027"
       },
       {
-        "degree": "Licence d'information-communication",
-        "school": "Université de Lille",
-        "period": "2021 — 2024"
+        "degree": "Bachelor de journalisme",
+        "school": "ISFJ — Lille",
+        "period": "2022 — 2025"
+      },
+      {
+        "degree": "Baccalauréat général (spécialités HGGSP, Physique-Chimie, Mathématiques) — section natation sport-études",
+        "school": "Lycée GDLT, Nancy",
+        "period": "2019 — 2022"
       }
     ],
     "skills": [
       "Reportage de terrain",
-      "Écriture longue",
-      "Montage audio (Reaper, Audition)",
-      "Montage vidéo (Premiere)",
-      "Photographie",
-      "Anglais courant",
-      "Espagnol intermédiaire"
+      "Presse écrite",
+      "Radio & chronique",
+      "JRI / MOJO",
+      "Web & SEO",
+      "Montage vidéo (Adobe Premiere Pro, Final Cut Pro, CapCut)",
+      "Montage audio (Audacity)",
+      "PAO (InDesign)",
+      "Canva",
+      "Suite Office",
+      "YourTextGuru",
+      "Anglais (B1/B2)",
+      "Allemand (B2)"
     ],
-    "pdfUrl": "https://drive.google.com/file/d/EXEMPLE_ID_CV/view"
+    "pdfUrl": "CV-Charlotte_Esteve-2026.pdf"
   }
 }
