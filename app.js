@@ -161,9 +161,9 @@ async function renderHomeFeatured() {
   try {
     const data = await loadData();
     const picks = [
-      { kind: "article", page: "articles.html", label: "Article", item: data.articles?.[0] },
-      { kind: "audio",   page: "audio.html",    label: "Audio",   item: data.audio?.[0] },
-      { kind: "video",   page: "video.html",    label: "Vidéo",   item: data.video?.[0] }
+      { kind: "article", page: "articles", label: "Article", item: data.articles?.[0] },
+      { kind: "audio",   page: "audio",    label: "Audio",   item: data.audio?.[0] },
+      { kind: "video",   page: "video",    label: "Vidéo",   item: data.video?.[0] }
     ];
     grid.innerHTML = picks.filter(p => p.item).map(p => `
       <a class="featured-item" href="${p.page}">
@@ -237,36 +237,6 @@ async function renderCV() {
               </article>
             `).join("")}
           </div>
-        </div>
-      </div>
-    `;
-  } catch (err) {
-    container.innerHTML = `<p class="loading">Erreur de chargement : ${err.message}</p>`;
-  }
-}
-
-async function renderContact() {
-  const container = document.querySelector("[data-contact]");
-  if (!container) return;
-  try {
-    const data = await loadData();
-    container.innerHTML = `
-      <div class="contact-grid">
-        <div>
-          <p class="contact-block-title">Email</p>
-          <a class="contact-email" href="mailto:${data.site.email}">${data.site.email}</a>
-          <p class="cv-summary" style="margin-top: 12px;">
-            Pour toute proposition de pige, collaboration ou question, n'hésitez pas à m'écrire.
-            Je réponds sous 48h.
-          </p>
-        </div>
-        <div>
-          <p class="contact-block-title">Réseaux</p>
-          <ul class="social-list">
-            ${data.site.social.map(s => `
-              <li><a href="${s.url}" target="_blank" rel="noopener">${s.label}</a></li>
-            `).join("")}
-          </ul>
         </div>
       </div>
     `;
