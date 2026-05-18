@@ -488,7 +488,6 @@ button { font: inherit; cursor: pointer; }
   font-size: 19px;
   line-height: 1.5;
   margin: 0 0 56px;
-  max-width: 60ch;
   color: var(--fg);
   text-wrap: pretty;
 }
