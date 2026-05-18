@@ -26,17 +26,20 @@ async function loadData() {
   return _dataPromise;
 }
 
-/* ---------- Google Drive helpers ---------- */
+/* ---------- Media helpers ---------- */
 
-function driveFileId(url) {
-  if (!url) return null;
-  const m = url.match(/\/file\/d\/([^/]+)/) || url.match(/[?&]id=([^&]+)/);
-  return m ? m[1] : null;
+function mediaSrc(item) {
+  // `file` (chemin local) prioritaire, fallback sur l'ancien `driveUrl`.
+  if (item.file) return item.file;
+  if (item.driveUrl) {
+    const m = item.driveUrl.match(/\/file\/d\/([^/]+)/) || item.driveUrl.match(/[?&]id=([^&]+)/);
+    return m ? `https://drive.google.com/file/d/${m[1]}/preview` : item.driveUrl;
+  }
+  return "";
 }
 
-function drivePreviewUrl(url) {
-  const id = driveFileId(url);
-  return id ? `https://drive.google.com/file/d/${id}/preview` : url;
+function hasMedia(item) {
+  return Boolean(item.file || item.driveUrl);
 }
 
 /* ---------- Date format ---------- */
@@ -92,37 +95,62 @@ function renderCard(item, kind, index) {
   const embed = document.createElement("div");
   embed.className = "embed-card";
   const frameClass = kind === "video" ? "video" : kind === "audio" ? "audio" : "pdf";
+  const src = mediaSrc(item);
+  const available = hasMedia(item);
+  // Fichier local => player natif. Sinon (driveUrl seul, fichier trop gros) => iframe Drive.
+  const useNativePlayer = Boolean(item.file);
+
+  let playerHTML = "";
+  if (!available) {
+    playerHTML = `<p class="embed-empty">Document non disponible pour le moment.</p>`;
+  } else if (!useNativePlayer) {
+    playerHTML = `<iframe class="embed-frame ${frameClass}" src="" title="${item.title}" allow="autoplay" allowfullscreen></iframe>`;
+  } else if (kind === "video") {
+    playerHTML = `<video class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></video>`;
+  } else if (kind === "audio") {
+    playerHTML = `<audio class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></audio>`;
+  } else {
+    playerHTML = `<iframe class="embed-frame ${frameClass}" src="" title="${item.title}"></iframe>`;
+  }
+
+  const actionLink = available
+    ? (useNativePlayer
+        ? `<a href="${src}" target="_blank" rel="noopener" download>Télécharger ↓</a>`
+        : `<a href="${item.driveUrl}" target="_blank" rel="noopener">Ouvrir sur Google Drive ↗</a>`)
+    : `<span></span>`;
+
   embed.innerHTML = `
-    <iframe class="embed-frame ${frameClass}" allow="autoplay" allowfullscreen></iframe>
+    ${playerHTML}
     <div class="embed-actions">
-      <a href="${item.driveUrl}" target="_blank" rel="noopener">Ouvrir sur Google Drive ↗</a>
+      ${actionLink}
       <button class="embed-close" type="button">Fermer</button>
     </div>
   `;
   embed.style.gridColumn = "1 / -1";
 
+  function closePlayer(el) {
+    el.classList.remove("open");
+    const v = el.querySelector("video, audio");
+    if (v) { v.pause(); v.currentTime = 0; }
+    const f = el.querySelector("iframe");
+    if (f) f.src = "";
+  }
+
   action.querySelector("button").addEventListener("click", () => {
+    if (!available) return;
     const isOpen = embed.classList.contains("open");
-    /* Close any other open embed first */
     document.querySelectorAll(".embed-card.open").forEach(el => {
-      if (el !== embed) {
-        el.classList.remove("open");
-        const f = el.querySelector("iframe");
-        if (f) f.src = "";
-      }
+      if (el !== embed) closePlayer(el);
     });
     if (isOpen) {
-      embed.classList.remove("open");
-      embed.querySelector("iframe").src = "";
+      closePlayer(embed);
     } else {
       embed.classList.add("open");
-      embed.querySelector("iframe").src = drivePreviewUrl(item.driveUrl);
+      const frame = embed.querySelector("iframe");
+      if (frame) frame.src = src;
     }
   });
-  embed.querySelector(".embed-close").addEventListener("click", () => {
-    embed.classList.remove("open");
-    embed.querySelector("iframe").src = "";
-  });
+  embed.querySelector(".embed-close").addEventListener("click", () => closePlayer(embed));
 
   /* Wrapper li actually contains embed below — append both into a fragment */
   const wrapper = document.createDocumentFragment();

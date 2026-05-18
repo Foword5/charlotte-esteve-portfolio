@@ -431,8 +431,15 @@ button { font: inherit; cursor: pointer; }
   display: block;
 }
 .embed-frame.video { aspect-ratio: 16/9; }
-.embed-frame.audio { height: 80px; }
+.embed-frame.audio { height: 54px; background: transparent; }
 .embed-frame.pdf { height: 720px; }
+.embed-empty {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--fg-muted);
+  font-size: 14px;
+  margin: 0;
+}
 
 .embed-actions {
   display: flex;
