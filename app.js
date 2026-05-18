@@ -39,7 +39,7 @@ function mediaSrc(item) {
 }
 
 function hasMedia(item) {
-  return Boolean(item.file || item.driveUrl);
+  return Boolean((item.file && item.file != "") || (item.driveUrl && item.driveUrl != ""));
 }
 
 /* ---------- Date format ---------- */
@@ -63,6 +63,8 @@ function fmtDateShort(iso) {
 /* ---------- Card renderer ---------- */
 
 function renderCard(item, kind, index) {
+  const available = hasMedia(item);
+
   const li = document.createElement("li");
   li.className = "card";
 
@@ -82,31 +84,34 @@ function renderCard(item, kind, index) {
     <p class="card-desc">${item.description || ""}</p>
   `;
 
-  const action = document.createElement("div");
-  action.className = "card-action";
-  const btnLabel = kind === "article" ? "Lire" : kind === "audio" ? "Écouter" : "Regarder";
-  action.innerHTML = `<button class="btn btn-ghost" type="button">${btnLabel} <span class="arrow">→</span></button>`;
-
+  
   li.appendChild(meta);
   li.appendChild(body);
-  li.appendChild(action);
+
+  const action = document.createElement("div");
+
+  if (available){
+    action.className = "card-action";
+    const btnLabel = kind === "article" ? "Lire" : kind === "audio" ? "Écouter" : "Regarder";
+    action.innerHTML = `<button class="btn btn-ghost" type="button">${btnLabel} <span class="arrow">→</span></button>`;
+    li.appendChild(action);
+  }
 
   /* Embed area attached after card */
   const embed = document.createElement("div");
   embed.className = "embed-card";
   const frameClass = kind === "video" ? "video" : kind === "audio" ? "audio" : "pdf";
   const src = mediaSrc(item);
-  const available = hasMedia(item);
 
   let playerHTML = "";
-  if (!available) {
-    playerHTML = `<p class="embed-empty">Document non disponible pour le moment.</p>`;
-  } else if (kind === "video" && !src.endsWith(".mp3")) {
-    playerHTML = `<video class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></video>`;
-  } else if (kind === "audio" || src.endsWith(".mp3")) {
-    playerHTML = `<audio class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></audio>`;
-  } else {
-    playerHTML = `<iframe class="embed-frame ${frameClass}" src="" title="${item.title}"></iframe>`;
+  if (available) {
+    if (kind === "video" && !src.endsWith(".mp3")) {
+      playerHTML = `<video class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></video>`;
+    } else if (kind === "audio" || src.endsWith(".mp3")) {
+      playerHTML = `<audio class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></audio>`;
+    } else {
+      playerHTML = `<iframe class="embed-frame ${frameClass}" src="" title="${item.title}"></iframe>`;
+    }
   }
 
   embed.innerHTML = `
@@ -126,21 +131,22 @@ function renderCard(item, kind, index) {
     if (f) f.src = "";
   }
 
-  action.querySelector("button").addEventListener("click", () => {
-    if (!available) return;
-    const isOpen = embed.classList.contains("open");
-    document.querySelectorAll(".embed-card.open").forEach(el => {
-      if (el !== embed) closePlayer(el);
+  if (available) {
+    action.querySelector("button").addEventListener("click", () => {
+      const isOpen = embed.classList.contains("open");
+      document.querySelectorAll(".embed-card.open").forEach(el => {
+        if (el !== embed) closePlayer(el);
+      });
+      if (isOpen) {
+        closePlayer(embed);
+      } else {
+        embed.classList.add("open");
+        const frame = embed.querySelector("iframe");
+        if (frame) frame.src = src;
+      }
     });
-    if (isOpen) {
-      closePlayer(embed);
-    } else {
-      embed.classList.add("open");
-      const frame = embed.querySelector("iframe");
-      if (frame) frame.src = src;
-    }
-  });
-  embed.querySelector(".embed-close").addEventListener("click", () => closePlayer(embed));
+    embed.querySelector(".embed-close").addEventListener("click", () => closePlayer(embed));
+  }
 
   /* Wrapper li actually contains embed below — append both into a fragment */
   const wrapper = document.createDocumentFragment();
