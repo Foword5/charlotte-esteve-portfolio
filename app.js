@@ -97,32 +97,22 @@ function renderCard(item, kind, index) {
   const frameClass = kind === "video" ? "video" : kind === "audio" ? "audio" : "pdf";
   const src = mediaSrc(item);
   const available = hasMedia(item);
-  // Fichier local => player natif. Sinon (driveUrl seul, fichier trop gros) => iframe Drive.
-  const useNativePlayer = Boolean(item.file);
 
   let playerHTML = "";
   if (!available) {
     playerHTML = `<p class="embed-empty">Document non disponible pour le moment.</p>`;
-  } else if (!useNativePlayer) {
-    playerHTML = `<iframe class="embed-frame ${frameClass}" src="" title="${item.title}" allow="autoplay" allowfullscreen></iframe>`;
-  } else if (kind === "video") {
+  } else if (kind === "video" && !src.endsWith(".mp3")) {
     playerHTML = `<video class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></video>`;
-  } else if (kind === "audio") {
+  } else if (kind === "audio" || src.endsWith(".mp3")) {
     playerHTML = `<audio class="embed-frame ${frameClass}" controls preload="metadata" src="${src}"></audio>`;
   } else {
     playerHTML = `<iframe class="embed-frame ${frameClass}" src="" title="${item.title}"></iframe>`;
   }
 
-  const actionLink = available
-    ? (useNativePlayer
-        ? `<a href="${src}" target="_blank" rel="noopener" download>Télécharger ↓</a>`
-        : `<a href="${item.driveUrl}" target="_blank" rel="noopener">Ouvrir sur Google Drive ↗</a>`)
-    : `<span></span>`;
-
   embed.innerHTML = `
     ${playerHTML}
     <div class="embed-actions">
-      ${actionLink}
+      ${available ? `<a href="${src}" target="_blank" rel="noopener" download>Télécharger ↓</a>` : `<span></span>`}
       <button class="embed-close" type="button">Fermer</button>
     </div>
   `;
